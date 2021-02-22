@@ -63,12 +63,16 @@ h2{
 .navbutton{
   margin-left: 40px;
   font-size: 12px;
-  height:20px;
-  margin-top: 16px;
+  height:30px;
+  width: auto;
+  margin-top: 12px;
+  padding: 4px;
 }
 
 .navbutton:hover{
   box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 12px 16px 0 rgba(0,0,0,0.19);
+  color:#FFFFFF;
+  background-color:#000;
 }
 
 nav{
