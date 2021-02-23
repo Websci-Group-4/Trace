@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1{
+  margin-top: 6px;
+}
+
+h2{
+  margin-bottom: 10px;
+}
+
+.post{
+  margin-top: 30px;
+  text-align: center;
+  overflow-y: scroll;
+  width: auto;
+  height: 300px;
+}
+
+.leftcolumn{
+  text-align: left;
+  float: left;
+  width: 40%;
+  height: 60%;
+  border-style: solid;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.rightcolumn{
+  text-align: left;
+  float: right;
+  width: 40%;
+  height: 60%;
+  border-style: solid;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  padding-left: 12%;
+  padding-right: 12%;
+  box-sizing: border-box;
+}
+
+.navbar{
+  height: 14%;
+  display:flex;
+  align-items = center;
+}
+
+.navbutton{
+  margin-left: 40px;
+  font-size: 12px;
+  height:30px;
+  width: auto;
+  margin-top: 12px;
+  padding: 4px;
+}
+
+.navbutton:hover{
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 12px 16px 0 rgba(0,0,0,0.19);
+  background-color:#000;
+}
+
+nav{
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 16px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  font-size: 16px;
+}
