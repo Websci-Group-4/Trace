@@ -1,0 +1,7 @@
+{
+  "imgur": {
+    "auth_endpoint": "https://api.imgur.com/oauth2/authorize",
+    "clientid": "0e71a5cd780fae9",
+    "response_type": "token"
+  }
+}
