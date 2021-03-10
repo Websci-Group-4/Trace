@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/images'));
 // Fundamental Route
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
-})
+});
 
 app.listen(port, () => {
   console.log('Listening on *:3000');
