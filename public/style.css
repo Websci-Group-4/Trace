@@ -155,7 +155,6 @@ nav ul li a{
   transform: translateX(-50%) translateY(-50%);
   background-color: #FF8336;
   border: 10px;  
-
   padding-bottom: 20%;
   
 
@@ -164,7 +163,6 @@ nav ul li a{
 #profile-gallery .gallery-title{
   position: absolute;
   top: 80%;
-  /*transform: translateY(200%);*/
   text-overflow: ellipsis;
   height: 15%;
   width: 100%;
@@ -175,24 +173,17 @@ nav ul li a{
   padding: 2% 5%;
 }
 
-/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
   #profile-gallery .gallery-title-text{
     font-size: 1.5vw;
   }
 }
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
   #profile-gallery .gallery-title-text{
     font-size: 8vw;
   }
 }
-
-
-/*#profile-gallery img:hover{
-   opacity: 0.5;
-}*/
 
 #profile-gallery .image:hover{
   color: white;
@@ -201,7 +192,6 @@ nav ul li a{
 #profile-gallery .image:hover > img{
    opacity: 0.5;
 }
-
 
 #profile-gallery .image{
     position:relative;
