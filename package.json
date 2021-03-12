@@ -3,7 +3,6 @@
   "description": "An image gallery website that employs steganography to help creators protect their exclusive works.",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Websci-Group-4/Trace.git"
