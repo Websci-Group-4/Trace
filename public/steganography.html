@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jacob Dyer, Quadir Russell, Ethan Whitton, Deepti Sachi, and Kenny Lee">
+    <title>What is Steganography?</title>
+
+    <!-- CSS and other Stylization -->
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+  </head>
+  <body class="trace-yellow">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Trace</a>
+        <!-- For mobile users. -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- The navigation bar in general. -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/steganography.html">What is Steganography?</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/Websci-Group-4/Trace">Github</a></li>
+          </ul>
+          <!-- NOTE: Should only be shown when not logged in! -->
+          <ul class="ml-auto my-auto">
+            <button class="btn btn-secondary"><a class="text-light" href="/sign-in.html">Sign in</a></button>
+            <button class="btn btn-secondary"><a class="text-light" href="/register.html">Register</a></button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Information proper. -->
+    <article class="container mx-auto bg-light px-5">
+      <section class="row">
+        <h2 class="text-center pt-4 pb-2">Steganography (n.): "The art or practice of concealing a message, image, or file within another message, image, or file."</h2>
+        <p class="pt-2">
+          To accomplish our promise to artists and other visual creators,
+          Trace employs steganography to subtly mark up images intended for a closed audience.
+          In the case that the image is ever released elsewhere without the creator's authorization and discovered,
+          the leaked image can be uploaded back into Trace to identify who released the image without permission.
+        </p>
+      </section>
+      <section class="row">
+        <h3>Our Method:</h3>
+        <p>
+          When you decide to share a private image with somebody else through Trace,
+          we add a "fingerprint" to the image before it is sent to the recipient's computer.
+          Our reason to use steganography as opposed to watermark generation is that the visible effects of stegaonography are almost imperceptible to the eye.
+          When our software modifies your image before serving it,
+          many individual pixels of the image are slightly changed in order to have the fingerprint "blend in" with the data.
+        </p>
+        <p>
+          Once an image is reuploaded for evaluation
+          Trace can interpret the fingerprint and determine who downloaded the image.
+          What you do with the information is up to you alone,
+          but we do offer you the ability to restrict the offender's access to your images in the future.
+        </p>
+      </section>
+      <h3>Sources:</h3>
+      <ol>
+        <li><a href="https://www.merriam-webster.com/dictionary/steganography">Merriam Webster Dictionary Definition of Steganography</a></li>
+        <li><a href="https://docs.google.com/presentation/d/1Y3yRH9qpNPNQUGnvRHxPb2o1I_rqoiHp3gGMK7a9pEo/edit#slide=id.p">RPISEC 2020 - Steganography</a></li>
+      </ol>
+      <h3>Interactive Steganography Sites:</h3>
+      <ul>
+        <li><a href="https://stegonline.georgeom.net/upload">StegOnline</a></li>
+        <li><a href="http://stylesuxx.github.io/steganography/">Stylesuxx Steganography Online</a></li>
+      </ul>
+    </article>
+  </body>
+</html>
