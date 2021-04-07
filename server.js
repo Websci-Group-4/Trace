@@ -17,7 +17,7 @@ const nodeCleanup = require('node-cleanup');
 const configPath = 'config.json';
 const configEncoding = 'utf-8';
 
-console.log(`\nRetrieving configuration data from '${configPath}'...`);
+console.log(`\nRetrieving server configuration data from '${configPath}'...`);
 var config = JSON.parse(fs.readFileSync(configPath, configEncoding));
 console.log(`Retrieval of configuration data from '${configPath}' SUCCESS.`);
 
@@ -28,13 +28,13 @@ console.log(`Retrieval of configuration data from '${configPath}' SUCCESS.`);
 const DIRECTORIES = config.server.static_directories;
 
 // Serve all listed static directories with Express.
-console.log("\nServing static directories...");
+console.log("");
 for(var i = 0; i < DIRECTORIES.length; i++) {
   let path = DIRECTORIES[i].path;
   let mountPath = DIRECTORIES[i].mount_path;
 
-  app.use(mountPath, express.static(__dirname + path));
   console.log(`Serving static directory '${path}' from mount '${mountPath}'`);
+  app.use(mountPath, express.static(__dirname + path));
 }
 console.log("Serving static directories SUCCESS.");
 
@@ -54,12 +54,12 @@ app.get('/', function(req, res) {
 });
 
 // Get all named routers and set them to their relevant paths.
-console.log("\nLoading routers...");
+console.log("");
 for(var i = 0; i < ROUTERS.length; i++) {
   let path = ROUTERS[i].path;
 
-  app.use(ROUTERS[i].route, require(path));
   console.log(`Loading Router '${ROUTERS[i].name}' at route ${path}`);
+  app.use(ROUTERS[i].route, require(path));
 }
 console.log("Loading routers SUCCESS.");
 
