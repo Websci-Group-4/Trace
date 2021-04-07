@@ -50,7 +50,7 @@ app.use(cors()); // Open CORS policy.
 app.get('/', function(req, res) {
   // Redirect to Angular's serving the site since that's
   // where we will use Angular's routing in our project.
-  res.redirect('http://localhost:4200/');
+  res.redirect(`http://localhost:${config.server.frontendPort}/`);
 });
 
 // Get all named routers and set them to their relevant paths.
@@ -83,7 +83,7 @@ const db = mongoose.connection;
 // SET UP AND SERVE THE SERVER
 // ======================================================================
 
-const PORT = config.server.port;
+const PORT = config.server.apiPort;
 
 // Application starts if Node connects to our database successfully.
 db.once('open', function() {
