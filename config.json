@@ -7,7 +7,7 @@
     "static_directories": [
       {
         "mount_path": "/css",
-        "path": "./node_modules/bootstrap/dist/js"
+        "path": "./node_modules/bootstrap/dist/css"
       },
       {
         "mount_path": "/js",
