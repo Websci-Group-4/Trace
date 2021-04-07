@@ -1,0 +1,22 @@
+{
+  "server": {
+    "port": 3000,
+    "static_directories": [
+      {
+        "mount_path": "/css",
+        "path": "./node_modules/bootstrap/dist/js"
+      },
+      {
+        "mount_path": "/js",
+        "path": "./node_modules/bootstrap/dist/js"
+      }
+    ],
+    "routers": [
+      {
+        "name": "Template",
+        "path": "./routers/Template.Router",
+        "route": "/template"
+      }
+    ]
+  }
+}
