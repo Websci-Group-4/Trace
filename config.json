@@ -1,6 +1,8 @@
 {
   "server": {
     "port": 3000,
+    "dbName": "TraceDB",
+    "dbURI": "mongodb+srv://Public:EigfFD5FVhRRmWcc@cluster0.q0vzg.mongodb.net/TraceDB?retryWrites=true&w=majority",
     "static_directories": [
       {
         "mount_path": "/css",
