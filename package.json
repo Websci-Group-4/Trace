@@ -1,6 +1,18 @@
 {
   "name": "trace",
-  "version": "0.0.0",
+  "description": "An image gallery website that employs steganography to help creators protect their exclusive works.",
+  "version": "1.0.0",
+  "author": "Team Trace",
+  "homepage": "https://github.com/Websci-Group-4/Trace#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Websci-Group-4/Trace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Websci-Group-4/Trace/issues"
+  },
+  "license": "ISC",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,6 +31,12 @@
     "@angular/platform-browser": "~11.2.3",
     "@angular/platform-browser-dynamic": "~11.2.3",
     "@angular/router": "~11.2.3",
+    "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mongoose": "^5.12.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -41,5 +59,10 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
-  }
+  },
+  "keywords": [
+    "Images",
+    "Watermarking",
+    "Proof of Concept"
+  ]
 }
