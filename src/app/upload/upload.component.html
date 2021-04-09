@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jacob Dyer, Quadir Russell, Ethan Whitton, Deepti Sachi, and Kenny Lee">
+    <title>Trace - Profile</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <div class="container-md" id="upload-body">
+
+      <div class="row border">
+        <div class="col-md-9 upload-col">
+            <div class="container-md" id="upload-info">
+
+              <div class="container border py-3" id="upload-imgs">
+	            <input type="file" style="vertical-align: right;" id="upload"/>
+	            <label for="upload"></label>
+                <div class="p-3 border" id="imgs-scroll">
+                  <div class="row mx-1">
+                    <div class="col-sm-3">
+                      <div class="image">
+                        <img class="img full-width" src="assets/images/example_pic.jpg">
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="image">
+                        <img class="img full-width" src="assets/images/example_pic2.jpg">
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="image">
+                        <img class="img full-width" src="assets/images/example_pic3.jpg">
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="image">
+                        <img class="img full-width" src="assets/images/example_pic3.jpg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container px-3 py-2 border" id="upload-desc">
+                <label for="input-title" class="form-label">Title</label>
+                <div class="input-group input-group-sm m-1">
+                <input class="desc-input form-control" id="input-title" type="text" placeholder="" name=""/>
+                </div>
+
+                <label for="input-desc" class="form-label">Description</label>
+                <div class="input-group input-group-sm m-1">
+                <textarea class="desc-input form-control" id="input-desc" type="text" placeholder="" name=""></textarea>
+                </div>
+
+                <label for="input-tags" class="form-label">Tags (separate with commas)</label>
+                <div class="input-group input-group-sm m-1">
+                <input class="desc-input form-control" id="input-tags" type="text" placeholder="(e.g.) sketch, album, original" name=""/>
+                </div>
+
+              </div>
+             
+            </div>
+        </div>
+
+        <div class="col-sm-3 upload-col" id="upload-options">
+          <span>
+            <h3><b>Upload</b></h3>
+          </span>      
+          <span class="h4">
+          <div class="form-check form-check-inline m-3">
+            <input class="form-check-input" type="radio" name="pubpriv" value="option1" id="upload-private">
+            <label class="form-check-label" for="upload-private">
+              Private
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pubpriv" value="option2" id="upload-public">
+            <label class="form-check-label" for="upload-public">
+              Public
+            </label>
+          </div>          
+          <div class="form-check m-3">            
+            <input class="form-check-input" type="checkbox" value="" id="upload-public">
+            <label class="form-check-label" for="flexCheckDefault">
+              Enable Stenography
+            </label>          
+          </div>            
+          <button type="button" class="btn m-3" onclick="location.href='/profile'">Publish</button>     
+          <!-- <br><textarea readonly placeholder="link appears here"></textarea> -->
+          </span>               
+      	</div>
+   	  </div>
+    </div>
+
+
+  </body>
+</html>

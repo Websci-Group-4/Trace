@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jacob Dyer, Quadir Russell, Ethan Whitton, Deepti Sachi, and Kenny Lee">
+    <title>Trace</title>
+
+    <!-- Non-Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+
+    <!-- Container for the image gallery -->
+    <div class="container">
+
+      <!-- Full-width images with number text -->
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="assets/images/gal1.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img src="assets/images/gal2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img src="assets/images/gal3.jpeg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img src="assets/images/gal4.jpeg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img src="assets/images/gal5.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="assets/images/gal6.jpg" style="width:100%">
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <!-- Image text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <!-- Thumbnail images -->
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" width="12.5%" height="128px" src="assets/images/gal1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Starry Night">
+        </div>
+        <div class="column">
+          <img class="demo cursor" width="12.5%" height="128px" src="assets/images/gal2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Open Eyes">
+        </div>
+        <div class="column">
+          <img class="demo cursor" width="12.5%" height="128px" src="assets/images/gal3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Colorfun">
+        </div>
+        <div class="column">
+          <img class="demo cursor" width="12.5%" height="128px" src="assets/images/gal4.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Rainbow Chalk">
+        </div>
+        <div class="column">
+          <img class="demo cursor" width="12.5%" height="128px" src="assets/images/gal5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Abstract Nature">
+        </div>
+        <div class="column">
+          <img class="demo cursor" width="12.5%" height="128px" src="assets/images/gal6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Park Days">
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+  </script>
+</html>
+

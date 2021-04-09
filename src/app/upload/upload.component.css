@@ -1,0 +1,105 @@
+#upload-body{
+	background-color: #FFF8E6;
+	height: 90%;
+}
+
+.upload-col{
+	/*background-color: red;*/
+	/*overflow-y: hidden;*/
+	display: block;
+	/*padding: 1vh;*/
+	height: 90vh;
+
+}
+
+#upload-info{
+	padding: 1vh;
+	/*background-color: black;*/
+	height: inherit;
+	display: block;
+}
+
+#upload-options{
+	padding: 2vh;
+	/*background-color: orange;*/
+	height: inherit;
+	display: block;
+}
+
+#upload-imgs{
+	/*background-color: blue;*/
+	height: 50%;
+	display: block;
+	padding: 3%;
+}
+
+#upload-desc{
+	/*background-color: green;*/
+	height: 50%;
+	display: block;
+}
+
+#input-desc{
+	height: 40%;
+	/*display: block; */
+}
+
+#input-desc input{
+	height: 5px;
+	/*display: block; */
+}
+
+#imgs-scroll{
+	height: 80%;
+	display: block;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin: 2% 0%;
+	background-color: white;
+}
+
+.img-thumb{
+	width: 30%;
+	/*height: 30%;*/
+	padding-top: 100%;
+	display: block;
+}
+
+img{
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 10%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #FF8336;
+}
+
+
+.image:hover{
+  color: white;
+}
+
+.image:hover > img{
+   opacity: 0.5;
+}
+
+.image{
+    position:relative;
+    overflow:hidden;
+    padding-bottom:100%;
+    background-color: #FF8336;
+    border-radius: 10px;
+	/*box-shadow: 5px 5px 10px #FF8336;*/
+	border-style: solid;
+	border-width:  3px;
+	border-color:  #FF8336;
+}
+
+#upload-options button{
+  background-color: #872712;
+  color: white;
+}
