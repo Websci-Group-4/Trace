@@ -1,0 +1,123 @@
+
+LAB PROJECT -- Version: Lab 6
+=============================
+By: Team Trace (Jacob Dyer, Deepti Sachi, Ethan Whitton, Q Russell, and Kenny Lee)
+
+Installation/Setup:
+-------------------
+1. Download the project.
+2. Run command 'npm install'.
+
+To Use the Project:
+-------------------
+1. Run command 'node server' to start the lab's backend.
+2. Run command 'ng serve' to start the lab's frontend.
+3. Connect to the site normally at 'http://localhost:3000/', it will
+   redirect you to 'http://localhost:4200/'.
+
+
+Implemented API Endpoints:
+==========================
+[ROUTER]:
+---------
+[METHOD] '[ROUTE]'
+  - Endpoint description
+
+
+Work Log:
+=========
+Jacob Dyer
+----------
+Visualization 1: Comparing API Endpoint Usage via Sequences Sunburst.
+Visualization 2: Comparing API User Usage Metrics via Horizontal Bar Chart.
+
+Worklog:
+- Set up the Angular for the project.
+- Devised a method to "plug and play" with routers and static directories.
+    > SEE 'server.js' AND 'config.json' for more.
+Part 1: Creating Your Datasets
+- T
+Part 2: Creating Your Visualizations
+- T
+Part 3: Displaying Your Visualizations
+- T
+
+Creativity:
+- As mentioned in item 2 of my worklog, I approached the problem of adding and removing
+  routers and static directories from a different angle and made it the domain of the
+  configuration file.  This has the added benefit of further allowing us to check if
+  a static directory or router is the source of an error on application startup.
+- T
+
+Deepti Sachi
+------------
+Visualization 1: Tracking tag usage by user and corresponding uploads by tag.
+Visualization 2: Tracking viewer OR upload frequency over time. (note: whichever is easier to code for)
+
+Worklog:
+- T
+Part 1: Creating Your Datasets
+- T
+Part 2: Creating Your Visualizations
+- T
+Part 3: Displaying Your Visualizations
+- T
+
+Creativity:
+- T
+
+Ethan Whitton
+-------------
+Visualization 1:
+Visualization 2:
+
+Worklog:
+- T
+Part 1: Creating Your Datasets
+- T
+Part 2: Creating Your Visualizations
+- T
+Part 3: Displaying Your Visualizations
+- T
+
+Creativity:
+- T
+
+Q Russell
+---------
+Visualization 1:
+Visualization 2:
+
+Worklog:
+- T
+Part 1: Creating Your Datasets
+- T
+Part 2: Creating Your Visualizations
+- T
+Part 3: Displaying Your Visualizations
+- T
+
+Creativity:
+- T
+
+Kenny Lee
+---------
+Visualization 1:
+Visualization 2:
+
+Worklog:
+- T
+Part 1: Creating Your Datasets
+- T
+Part 2: Creating Your Visualizations
+- T
+Part 3: Displaying Your Visualizations
+- T
+
+Creativity:
+- T
+
+
+Resources Used:
+===============
+1. https://observablehq.com/@d3/gallery
