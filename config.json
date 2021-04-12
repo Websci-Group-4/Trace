@@ -16,9 +16,29 @@
     ],
     "routers": [
       {
-        "name": "Template",
-        "path": "./routers/Template.Router",
-        "route": "/template"
+        "name": "Authentication",
+        "path": "./routers/Auth.Router",
+        "route": "/auth"
+      },
+      {
+        "name": "Organizations",
+        "path": "./routers/Organization.Router",
+        "route": "/organizations"
+      },
+      {
+        "name": "Users",
+        "path": "./routers/User.Router",
+        "route": "/users"
+      },
+      {
+        "name": "Permissions",
+        "path": "./routers/Permission.Router",
+        "route": "/permissions"
+      },
+      {
+        "name": "Images",
+        "path": "./routers/Image.Router",
+        "route": "/image"
       }
     ]
   }
