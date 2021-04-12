@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Permission = new Schema({
+const Image = new Schema({
     url: {
         type: String,
         required: true
@@ -17,4 +17,4 @@ const Permission = new Schema({
     }],
 });
 
-module.exports = mongoose.model("Permission", Permission);
+module.exports = mongoose.model("Image", Image);
