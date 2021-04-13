@@ -32,6 +32,7 @@ This endpoint is used for [PLACEHOLDER].
 #### Sample Output:
 ```json
 ```
+
 ---
 
 ## Image Endpoints - '/image'
@@ -88,6 +89,7 @@ This endpoint checks provided image data for our watermarking and returns the pa
 #### Sample Output:
 ```json
 ```
+
 ---
 
 ## Organization Endpoints - '/organizations'
@@ -134,6 +136,7 @@ This endpoint deletes the specified organization from our database.
 #### Sample Output:
 ```json
 ```
+
 ---
 
 ## Permission Endpoints - '/permissions'
@@ -180,6 +183,7 @@ This endpoint deletes the specified permission from our database.
 #### Sample Output:
 ```json
 ```
+
 ---
 
 ## User Endpoints - '/users'
