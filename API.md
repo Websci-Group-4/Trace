@@ -12,8 +12,8 @@ See INSTALL.md for details on how to set up and run the backend.
 **Overview:**
 Request | Endpoint | Functionality | Implemented?
 --------|----------|---------------|-------------
-POST | /auth/login | N/A | No
-POST | /auth/signup | N/A | No
+POST | /login | N/A | No
+POST | /signup | N/A | No
   
 ### [POST] - '/auth/login'  
 This endpoint is used for [PLACEHOLDER].  
@@ -38,7 +38,56 @@ This endpoint is used for [PLACEHOLDER].
 **Overview:**
 Request | Endpoint | Functionality | Implemented?
 --------|----------|---------------|-------------
+GET | /:id | Returns the specified image from our database. | No
+POST | /create | Creates a new image from provided information and stores it in our database. | No
+POST | /update/:id | Updates the properties of the specified image in our database with provided information. | No
+DELETE | /delete/:id | Deletes the specified image from our database. | No
+POST | /against/:id | Checks provided image data for our watermarking and returns the payload if found. | No
 
+### [GET] - '/image/:id'
+This endpoint returns the specified image from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+#### [POST] - '/image/create'
+This endpoint creates a new image from provided information and stores it in our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+#### [POST] - '/image/update/:id'
+This endpoint updates the properties of the specified image in our database with provided information.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+#### [DELETE] - '/image/delete/:id'
+This endpoint deletes the specified image from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+#### [POST] - '/image/against/:id'
+This endpoint checks provided image data for our watermarking and returns the payload if found.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
 ---
 
 ## Organization Endpoints
