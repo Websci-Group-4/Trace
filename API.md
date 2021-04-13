@@ -53,7 +53,7 @@ This endpoint returns the specified image from our database.
 ```json
 ```
 
-#### [POST] - '/image/create'
+### [POST] - '/image/create'
 This endpoint creates a new image from provided information and stores it in our database.
 #### Sample Request:
 ```javascript
@@ -62,7 +62,7 @@ This endpoint creates a new image from provided information and stores it in our
 ```json
 ```
 
-#### [POST] - '/image/update/:id'
+### [POST] - '/image/update/:id'
 This endpoint updates the properties of the specified image in our database with provided information.
 #### Sample Request:
 ```javascript
@@ -71,7 +71,7 @@ This endpoint updates the properties of the specified image in our database with
 ```json
 ```
 
-#### [DELETE] - '/image/delete/:id'
+### [DELETE] - '/image/delete/:id'
 This endpoint deletes the specified image from our database.
 #### Sample Request:
 ```javascript
@@ -80,7 +80,7 @@ This endpoint deletes the specified image from our database.
 ```json
 ```
 
-#### [POST] - '/image/against/:id'
+### [POST] - '/image/against/:id'
 This endpoint checks provided image data for our watermarking and returns the payload if found.
 #### Sample Request:
 ```javascript
@@ -90,10 +90,50 @@ This endpoint checks provided image data for our watermarking and returns the pa
 ```
 ---
 
-## Organization Endpoints
+## Organization Endpoints - '/organizations'
 **Overview:**
 Request | Endpoint | Functionality | Implemented?
 --------|----------|---------------|-------------
+GET | /:id | Returns the specified organization from our database. | No
+POST | /create | Creates a new organization from provided information and stores it in our database. | No
+POST | /update/:id | Updates the properties of the specified organization in our database with provided information. | No
+DELETE | /delete/:id | Deletes the specified organization from our database. | No
+
+### [GET] - '/organizations/:id'
+This endpoint returns the specified organization from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [POST] - '/organizations/create'
+This endpoint creates a new organization from provided information and stores it in our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [POST] - '/organizations/update/:id'
+This endpoint updates the properties of the specified organization in our database with provided information.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [DELETE] - '/organizations/delete/:id'
+This endpoint deletes the specified organization from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
 ---
 
 ## Permission Endpoints
