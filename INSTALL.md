@@ -1,6 +1,5 @@
 
-# Trace --- Installation and Use
----
+# Trace - Installation and Use
 ## To Install the Project:
 1. Clone our project locally or download the **main** branch of our project from Github.
 2. If you do not have Node.js installed, navigate to the provided link and download your operating system's relevant Node.js installer, then run it and follow the process to to completion:
@@ -9,7 +8,6 @@
     - `npm install -g @angular/cli`
 4. You should have everything you need to use the project now.
 
----
 ## To Use the Project:
 1. Open your computer's Command Line twice and and navigate to the containing the downloaded project on both terminals.
 2. On one of the terminals, run `node server` to start up the project's backend.
