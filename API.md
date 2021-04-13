@@ -136,13 +136,93 @@ This endpoint deletes the specified organization from our database.
 ```
 ---
 
-## Permission Endpoints
+## Permission Endpoints - '/permissions'
 **Overview:**
 Request | Endpoint | Functionality | Implemented?
 --------|----------|---------------|-------------
+GET | /:id | Returns the specified permission from our database. | No
+POST | /create | Creates a new permission from provided information and stores it in our database. | No
+POST | /update/:id | Updates the properties of the specified permission in our database with provided information. | No
+DELETE | /delete/:id | Deletes the specified permission from our database. | No
+
+### [GET] - '/permissions/:id'
+This endpoint returns the specified permission from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [POST] - '/permissions/create'
+This endpoint creates a new permission from provided information and stores it in our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [POST] - '/permissions/update/:id'
+This endpoint updates the properties of the specified permission in our database with provided information.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [DELETE] - '/permissions/delete/:id'
+This endpoint deletes the specified permission from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
 ---
 
-## User Endpoints
+## User Endpoints - '/users'
 **Overview:**
 Request | Endpoint | Functionality | Implemented?
 --------|----------|---------------|-------------
+GET | /:id | Returns the specified user from our database. | No
+POST | /create | Creates a new user from provided information and stores it in our database. | No
+POST | /update/:id | Updates the properties of the specified user in our database with provided information. | No
+DELETE | /delete/:id | Deletes the specified user from our database. | No
+
+### [GET] - '/users/:id'
+This endpoint returns the specified user from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [POST] - '/users/create'
+This endpoint creates a new user from provided information and stores it in our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [POST] - '/users/update/:id'
+This endpoint updates the properties of the specified user in our database with provided information.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
+
+### [DELETE] - '/users/delete/:id'
+This endpoint deletes the specified user from our database.
+#### Sample Request:
+```javascript
+```
+#### Sample Output:
+```json
+```
