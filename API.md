@@ -15,21 +15,21 @@ Request | Endpoint | Functionality | Implemented?
 POST | /auth/login | N/A | No
 POST | /auth/signup | N/A | No
   
-**[POST] - '/auth/login'**  
+### [POST] - '/auth/login'  
 This endpoint is used for [PLACEHOLDER].  
-Sample Request:
+#### Sample Request:
 ```javascript
 ```
-Sample Output:
+#### Sample Output:
 ```json
 ```
   
-**[POST] - '/auth/signup'**  
+### [POST] - '/auth/signup'  
 This endpoint is used for [PLACEHOLDER].  
-Sample Request:
+#### Sample Request:
 ```javascript
 ```
-Sample Output:
+#### Sample Output:
 ```json
 ```
 ---
