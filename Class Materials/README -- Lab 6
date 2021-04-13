@@ -28,13 +28,14 @@ Work Log:
 =========
 Jacob Dyer
 ----------
-Visualization 1: Comparing API Endpoint Usage via Sequences Sunburst.
-Visualization 2: Comparing API User Usage Metrics via Horizontal Bar Chart.
+Visualization 1: Tracking organizational use by number of images its members "own."
+Visualization 2: Tracking powerusers by counting every user's permissions via Horizontal Bar Chart.
 
 Worklog:
 - Set up the Angular for the project.
 - Devised a method to "plug and play" with routers and static directories.
     > SEE 'server.js' AND 'config.json' for more.
+- Wrote up the router outlines according to our API structure.
 Part 1: Creating Your Datasets
 - T
 Part 2: Creating Your Visualizations
@@ -47,7 +48,10 @@ Creativity:
   routers and static directories from a different angle and made it the domain of the
   configuration file.  This has the added benefit of further allowing us to check if
   a static directory or router is the source of an error on application startup.
-- T
+- Longer term:
+    - Wrote up Python code to incorporate Least Significant Bit steganography.  Have yet
+      to figure out the particulars of inputting and outputting information, but it's
+      there.
 
 Deepti Sachi
 ------------
