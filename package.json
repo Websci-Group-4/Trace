@@ -19,7 +19,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "seed": "node seed"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +32,7 @@
     "@angular/platform-browser": "~11.2.3",
     "@angular/platform-browser-dynamic": "~11.2.3",
     "@angular/router": "~11.2.3",
+    "bcrypt": "^5.0.1",
     "bootstrap": "^4.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
