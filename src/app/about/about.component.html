@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jacob Dyer, Quadir Russell, Ethan Whitton, Deepti Sachi, and Kenny Lee">
+    <title>About Trace</title>
+
+    <!-- CSS and other Stylization -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body class="trace-yellow">
+    <!-- Information proper. -->
+    <article class="container mx-auto bg-light px-5">
+      <section class="row">
+        <h2 class="text-center pt-4 pb-2">What is Trace?</h2>
+        <p class="pt-2">
+          Trace is a way for artists and other visual creators to manage exclusive access to their works and address the cases where somebody reuploads their work without permission.
+        </p>
+      </section>
+      <section class="row">
+        <h3>Access management?</h3>
+        <p>
+          One of the common trends for visual artists is to sell exclusive early access to features such as in-progress works or special pictures to paying customers.
+          Here at Trace, we provide the ability to create private image albums with a special emphasis on managing who does and who does not have access to your work.
+          The reason why you should consider using Trace to host an image is because it better enables you to address the problem of image reuploading.
+        </p>
+      </section>
+      <section class="row">
+        <h3>Addressing image reuploading?</h3>
+        <p>
+          What makes the exclusive access arrangement dangerous for visual creators are those who take their paid version of your works and redistribute them for free.
+          Although the problem itself is fully impossible to prevent so long as an image can be viewed by somebody other than the artist alone,
+          Trace exists to make finding the source of your leaked images easier.
+        </p>
+        <p>
+          To this end, we employ <a href="steganography.html">steganography</a>,
+          the art of hiding information such as text or whole images in plain sight,
+          to produce unique, hidden watermarks that are applied to the images that your customers view.
+          When you discover an image has been leaked, you can upload the image back to us here at Trace,
+          and automatically learn who among the private image circle downloaded the viewed image and ended up redistributing the image without your permission.
+        </p>
+      </section>
+    </article>
+
+    <article class="container mx-auto bg-light px-5">
+      <section class="row">
+        <h2 class="text-center pt-4 pb-2">Steganography (n.): "The art or practice of concealing a message, image, or file within another message, image, or file."</h2>
+        <p class="pt-2">
+          To accomplish our promise to artists and other visual creators,
+          Trace employs steganography to subtly mark up images intended for a closed audience.
+          In the case that the image is ever released elsewhere without the creator's authorization and discovered,
+          the leaked image can be uploaded back into Trace to identify who released the image without permission.
+        </p>
+      </section>
+      <section class="row">
+        <h3>Our Method:</h3>
+        <p>
+          When you decide to share a private image with somebody else through Trace,
+          we add a "fingerprint" to the image before it is sent to the recipient's computer.
+          Our reason to use steganography as opposed to watermark generation is that the visible effects of stegaonography are almost imperceptible to the eye.
+          When our software modifies your image before serving it,
+          many individual pixels of the image are slightly changed in order to have the fingerprint "blend in" with the data.
+        </p>
+        <p>
+          Once an image is reuploaded for evaluation
+          Trace can interpret the fingerprint and determine who downloaded the image.
+          What you do with the information is up to you alone,
+          but we do offer you the ability to restrict the offender's access to your images in the future.
+        </p>
+      </section>
+      <h3>Sources:</h3>
+      <ol>
+        <li><a href="https://www.merriam-webster.com/dictionary/steganography">Merriam Webster Dictionary Definition of Steganography</a></li>
+        <li><a href="https://docs.google.com/presentation/d/1Y3yRH9qpNPNQUGnvRHxPb2o1I_rqoiHp3gGMK7a9pEo/edit#slide=id.p">RPISEC 2020 - Steganography</a></li>
+      </ol>
+      <h3>Interactive Steganography Sites:</h3>
+      <ul>
+        <li><a href="https://stegonline.georgeom.net/upload">StegOnline</a></li>
+        <li><a href="http://stylesuxx.github.io/steganography/">Stylesuxx Steganography Online</a></li>
+      </ul>
+    </article>
+    
+  </body>
+</html>

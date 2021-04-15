@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jacob Dyer, Quadir Russell, Ethan Whitton, Deepti Sachi, and Kenny Lee">
+    <title>Trace - Profile</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container-md" id="profile-head">
+      <div class="p-5">
+        <div class="row">
+          <div class="col-sm-3">
+            <img  width="150" height="150" class="img-thumbnail mx-auto d-block" src="assets/images/profilepic.png">
+          </div>
+          <div class="col-sm-8">
+            <h1>Display Name</h1>
+            <h3>/username</h3>
+            <button type="button" class="btn" onclick="location.href='/upload'">Upload Images/Album</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container" id="profile-body">
+      <div class="p-3 border bg-light">
+        <div class="row">
+          <!-- <div class="p-1 border bg-light"> -->
+          <!-- <div class="p-3"> -->
+          <div class="col-sm-4 order-sm-12" id="profile-desc">
+            <div class="p-1">
+              <p class="text-break lh-base" id="profile-desc-text">
+                Description!        
+                Find me on:
+                website.com/username
+                anotherwebsite.com/username
+
+                <!-- <ul class="list-group">
+                  Find me on:
+                  <li class="list-group-item">Website 1: website1.com/username</li>
+                  <li class="list-group-item">Website 2: website2.com/username</li>
+                </ul> -->
+              </p>
+              <button type="button" class="btn" onclick="editprofiledesc()">Edit Profile</button>
+            </div>
+          </div>
+          <!-- </div> -->
+          <div class="col-sm-8 order-sm-1" id="profile-gallery">
+            <!-- <div class="p-1"> -->
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="image">
+                    <img class="img img-thumbnail full-width" src="assets/images/example_pic.jpg">
+                    <div class="gallery-title"><span  class="text-break gallery-title-text">title</span></div>
+                  </div>
+
+                </div>
+                <div class="col-sm-4">
+                  <div class="image">
+                    <img class="img img-thumbnail full-width" src="assets/images/example_pic2.jpg">
+                    <div class="gallery-title"><span  class="text-break gallery-title-text">title</span></div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="image">
+                    <img class="img img-thumbnail full-width" src="assets/images/example_pic3.jpg">
+                    <div class="gallery-title"><span  class="text-break gallery-title-text">title title title title title title title title title title </span></div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div> -->
+            <!-- <div class="p-1"> -->
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="image">
+                    <img class="img img-thumbnail full-width" src="assets/images/example_pic3.jpg">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="image">
+                    <img class="img img-thumbnail full-width" src="assets/images/example_pic.jpg">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="image">
+                    <img class="img img-thumbnail full-width" src="assets/images/example_pic2.jpg">
+                  </div>
+                </div>
+              </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    function editprofiledesc() {
+      var temp = document.getElementById("profile-desc-text").innerText;
+     document.getElementById("profile-desc").innerHTML = '<form method="post" id="profileDescEdit"><textarea id="editdesctext">'
+      + temp + '</textarea></form><button type="button" class="btn" onclick="confirmedit()">Confirm</button><button type="button" class="btn" onclick="canceledit()">Cancel</button>';
+    }
+
+    function confirmedit() {
+      var temp = document.getElementById("editdesctext").textContent;
+      document.getElementById("profile-desc").innerHTML = '<p class="text-break lh-base" id="profile-desc-text">' + temp + '</p><button type="button" class="btn" onclick="editprofiledesc()">Edit Profile</button>'; 
+    }
+  </script>
+</html>
