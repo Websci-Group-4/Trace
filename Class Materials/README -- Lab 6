@@ -16,14 +16,6 @@ To Use the Project:
    redirect you to 'http://localhost:4200/'.
 
 
-Implemented API Endpoints:
-==========================
-[ROUTER]:
----------
-[METHOD] '[ROUTE]'
-  - Endpoint description
-
-
 Work Log:
 =========
 Jacob Dyer
@@ -68,8 +60,8 @@ Creativity:
 
 Ethan Whitton
 -------------
-Visualization 1:
-Visualization 2:
+Visualization 1: See which types of users have interacted with an image the most https://observablehq.com/@d3/marimekko-chart
+Visualization 2: View entire breakdown of users by organizations as well https://observablehq.com/@d3/radial-dendrogram
 
 Worklog:
 - T
@@ -102,8 +94,8 @@ Creativity:
 
 Kenny Lee
 ---------
-Visualization 1:
-Visualization 2:
+Visualization 1: Tracking user activity based on geography via world map gradient scheme
+Visualization 2: Users over time via line graph
 
 Worklog:
 - T
