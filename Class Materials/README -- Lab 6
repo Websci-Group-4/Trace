@@ -3,25 +3,12 @@ LAB PROJECT -- Version: Lab 6
 =============================
 By: Team Trace (Jacob Dyer, Deepti Sachi, Ethan Whitton, Q Russell, and Kenny Lee)
 
-Installation/Setup:
--------------------
-1. Download the project.
-2. Run command 'npm install'.
-
-To Use the Project:
--------------------
-1. Run command 'node server' to start the lab's backend.
-2. Run command 'ng serve' to start the lab's frontend.
-3. Connect to the site normally at 'http://localhost:3000/', it will
-   redirect you to 'http://localhost:4200/'.
-
-
 Work Log:
 =========
 Jacob Dyer
 ----------
-Visualization 1: Tracking organizational use by number of images its members "own."
-Visualization 2: Tracking powerusers by counting every user's permissions via Horizontal Bar Chart.
+Visualization 1: Tracking organizational power by its users total permissions broken down by type.
+Visualization 2: Determining powerusers by counting every user's total permissions.
 
 Worklog:
 - Set up the Angular for the project.
@@ -29,7 +16,8 @@ Worklog:
     > SEE 'server.js' AND 'config.json' for more.
 - Wrote up the router outlines according to our API structure.
 Part 1: Creating Your Datasets
-- T
+- Figured out Mongoose Aggregation to create the two aggregation "queries" I need
+  for each of my visualizations.
 Part 2: Creating Your Visualizations
 - T
 Part 3: Displaying Your Visualizations

@@ -39,6 +39,7 @@
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "jquery": "^3.6.0",
+    "json-2-csv": "^3.10.3",
     "mongoose": "^5.12.3",
     "node-cleanup": "^2.1.2",
     "rxjs": "~6.6.0",

@@ -91,17 +91,6 @@ permissionRouter.delete('/delete/:id', (req, res) => {
   res.send("/permissions/delete/:id");
 });
 
-// ======================================================================
-// LAB 6 ROUTES
-// ======================================================================
-
-// Grabs all permissions on the database and formats the information into
-// a .csv file listing all users and their permissions.
-// Written by: Jacob Dyer
-permissionRouter.get('/all', (req, res) => {
-  res.send("NOT IMPLEMENTED.");
-});
-
 
 // Export the routes.
 module.exports = permissionRouter;
