@@ -45,6 +45,7 @@ console.log("Serving static directories SUCCESS.");
 const ROUTERS = config.server.routers;
 
 app.use(cors()); // Open CORS policy.
+app.use(express.json()); // Ensures correct JSON input.
 
 // Set up our landing page route.
 app.get('/', function(req, res) {
