@@ -57,21 +57,21 @@ userRouter.get('/deeptivis1/:id', function (req, res) {
 		  function(err, result) {
 		    if (err) {
 		      res.send(err);
-		    } else {	     
+		    } else {
 		      console.log(result);
-		     
+
 		      for(var i = 0; i<result.length; i++){
 		      	 let tags = [];
 		      	 let imagearr = [];
 		      	  imagearr.push(JSON.parse(JSON.stringify(result))[i].image);
-				  for(var j = 0; j < 3; j++){         			  	
+				  for(var j = 0; j < 3; j++){
 				    if( Math.floor(Math.random() * 2) == 1 ){
 				      tags.push(1);
 				    }else{
 				      tags.push(0);
-				    }		 
+				    }
 				  }
-				  
+
 				  imagearr.push(tags.join(",") + "\r\n");
 				  console.log(imagearr);
 				  imagecsv += imagearr.join(",");
@@ -83,9 +83,58 @@ userRouter.get('/deeptivis1/:id', function (req, res) {
 		});
 
     }
-  });	
+  });
 });
 
+//Written by Kenny Lee
+userRouter.get('/kennyl', async (req, res) => {
+  // Get the aggregated MongoDB data.
+  let orgPeople = await Users.aggregate()
+    .lookup({ from: 'users', localField: 'users', foreignField: '_id', as: 'users' })
+    .unwind({ path: '$users', preserveNullAndEmptyArrays: false })
+    .group({
+      _id: "$organization",
+      //countin the number of time each image appears
+      numOfPeople: { $sum: { $cond: [ { $eq: ["$permissions.organisation", "$organization"] }, 1, 0 ] } },
+     });
+
+  csvConverter.json2csv(orgPeople, (error, csv) => {
+    if(error) {
+      console.log("Failed! Query is not valid.");
+      res.json({
+        status: 500,
+        message: "Internal Server Error: Invalid Query"
+      });
+    } else {
+      res.send(csv);
+    }
+  });
+});
+
+//Written by Kenny Lee
+userRouter.get('/kennyl2', async (req, res) => {
+  // Get the aggregated MongoDB data.
+  let numImage = await Views.aggregate()
+    .lookup({ from: 'views', localField: 'views', foreignField: '_id', as: 'views' })
+    .unwind({ path: '$views', preserveNullAndEmptyArrays: false })
+    .group({
+      _id: "$image",
+      //countin the number of time each image is viewed
+      images1: { $sum: { $cond: [ { $eq: ["$permissions.image", "$image"] }, 1, 0 ] } },
+     });
+
+  csvConverter.json2csv(numUsers, (error, csv) => {
+    if(error) {
+      console.log("Failed! Query is not valid.");
+      res.json({
+        status: 500,
+        message: "Internal Server Error: Invalid Query"
+      });
+    } else {
+      res.send(csv);
+    }
+  });
+});
 
 // Export the routes.
 module.exports = userRouter;
