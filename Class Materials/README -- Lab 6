@@ -108,11 +108,14 @@ Visualization 2: Number of views on each image, bar chart
 Worklog:
 - T
 Part 1: Creating Your Datasets
-- T
+- I used Mongoose Aggregation to pull out queries for my data
 Part 2: Creating Your Visualizations
-- T
+- I used R studio to create the visualizations.
+- My first one is a simple breakdown of the users in each organization, I used a bar chart for this as it is clean and simple.
+- My second visualization is of number of views on each image in our database. I predicted that the smaller the number of the image, which implies that it was made earlier, would get more traffic compare to other images.
 Part 3: Displaying Your Visualizations
-- T
+- I put it up on lab6 components along with the csv download.
+- For my second visualization, my predictions were accurate with a few anomalies. A trend line was drawn to show a negative correlation between image number and number of views. 
 
 Creativity:
 - T
