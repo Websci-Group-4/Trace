@@ -10,8 +10,9 @@
 
 ## To Use the Project:
 1. Open your computer's Command Line twice and and navigate to the containing the downloaded project on both terminals.
-2. On one of the terminals, run `node server` to start up the project's backend.
+2. On one of the terminals, run `npm install` to ensure you have the requisite Node modules for the proejct to work.
+3. On one of the terminals, run `node server` to start up the project's backend.
     - You can use the project's API from http://localhost:3000.
     - See API.md for more details.
-3. On the other terminal, run `ng serve` to start up the project's frontend.
+4. On the other terminal, run `ng serve` to start up the project's frontend.
     - You can connect to the page's frontend normally at http://localhost:4200.
