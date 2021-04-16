@@ -29,7 +29,6 @@ orgRouter.get("/visualization", (req, res) => {
   // Do stuff.
   return Organization.find({}).then((orgs) => {
     return User.find({}).then((users) => {
-      console.log(users);
       let organizations = [];
       orgs.forEach((org) =>
         organizations.push(
@@ -59,7 +58,7 @@ orgRouter.get("/visualization", (req, res) => {
           children: [
             ...resss,
             {
-              name: "None",
+              name: "",
               children: users
                 .filter((a) => !a.organization)
                 .map((usr) => ({

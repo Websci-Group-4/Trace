@@ -37,7 +37,6 @@
     "bootstrap": "^4.6.0",
     "cors": "^2.8.5",
     "d3": "^6.7.0",
-    "d3-node": "^2.2.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",

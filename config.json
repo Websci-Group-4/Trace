@@ -39,6 +39,11 @@
         "name": "Images",
         "path": "./routers/Image.Router",
         "route": "/image"
+      },
+      {
+        "name": "Views",
+        "path": "./routers/View.Router",
+        "route": "/views"
       }
     ]
   }
