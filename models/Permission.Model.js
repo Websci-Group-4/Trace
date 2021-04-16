@@ -2,6 +2,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// NOTE: Missing user indicates "Public" permission.
+
 const Permission = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -9,6 +11,8 @@ const Permission = new Schema({
     },
     can: {
         type: String,
+        enum: ['VIEW', 'EDIT', 'OWN'],
+        default: 'VIEW',
         required: true
     },
     image: {

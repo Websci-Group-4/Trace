@@ -3,43 +3,51 @@ LAB PROJECT -- Version: Lab 6
 =============================
 By: Team Trace (Jacob Dyer, Deepti Sachi, Ethan Whitton, Q Russell, and Kenny Lee)
 
-Installation/Setup:
--------------------
-1. Download the project.
-2. Run command 'npm install'.
 
-To Use the Project:
--------------------
-1. Run command 'node server' to start the lab's backend.
-2. Run command 'ng serve' to start the lab's frontend.
-3. Connect to the site normally at 'http://localhost:3000/', it will
-   redirect you to 'http://localhost:4200/'.
+IMPORTANT:
+==========
+To see our Lab 6 work, navigate to 'http://localhost:4200/lab6'.
 
 
 Work Log:
 =========
 Jacob Dyer
 ----------
-Visualization 1: Comparing API Endpoint Usage via Sequences Sunburst.
-Visualization 2: Comparing API User Usage Metrics via Horizontal Bar Chart.
+Visualization 1: Tracking organizational power by its users total permissions broken down by type.
+    > ENDPOINT: 'http://localhost:3000/organizations/power'
+Visualization 2: Determining proportion of powerusers by counting every user's total permissions.
+    > ENDPOINT: 'http://localhost:3000/users/powerusers'
 
 Worklog:
 - Set up the Angular for the project.
 - Devised a method to "plug and play" with routers and static directories.
     > SEE 'server.js' AND 'config.json' for more.
+- Wrote up the router outlines according to our API structure.
 Part 1: Creating Your Datasets
-- T
+- Figured out Mongoose Aggregation to create the two aggregation "queries" I need
+  for each of my visualizations.
+    - It took a lot of tinkering on MongoDB Compass to figure out Aggregation, but
+      my work translates to Node nicely since Mongoose uses a light wrapper.
+- Implemented my routes and got my data that way.
 Part 2: Creating Your Visualizations
-- T
+- Didn't have enough time for D3 with the schedule I keep, unfortunately.  Chose R instead.
+- Struggled for a few hours with wrangling the .CSV data for R.  I suspect it's more
+  learning curve related, since this is my first time using R.
 Part 3: Displaying Your Visualizations
-- T
+- Deepti created the Lab 6 Component so we can display our graphs and our CSV links,
+  and I put my graphs up there as well.
 
 Creativity:
 - As mentioned in item 2 of my worklog, I approached the problem of adding and removing
   routers and static directories from a different angle and made it the domain of the
   configuration file.  This has the added benefit of further allowing us to check if
   a static directory or router is the source of an error on application startup.
-- T
+- Longer term:
+    - Wrote up Python code to incorporate Least Significant Bit steganography.  Have yet
+      to figure out the particulars of inputting and outputting information, but it's
+      there.  It's not up on any branch yet as I tinker with figuring out how to hook it
+      into a Node project, but send me a Slack message if you would like to see the
+      program in action.
 
 Deepti Sachi
 ------------
