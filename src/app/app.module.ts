@@ -12,6 +12,7 @@ import { UploadComponent } from './upload/upload.component';
 import { ImageComponent } from './image/image.component';
 import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from './register/register.component';
+import { Lab6Component } from './lab6/lab6.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
     UploadComponent,
     ImageComponent,
     SigninComponent,
-    RegisterComponent
+    RegisterComponent,
+    Lab6Component
   ],
   imports: [
     BrowserModule,
