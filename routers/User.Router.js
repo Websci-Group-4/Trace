@@ -59,6 +59,8 @@ userRouter.get('/powerusers', async (req, res) => {
         status: 500,
         message: "Internal Server Error: Error running aggregate query on our database."
       });
+    } else {
+      res.send(csv);
     }
   });
 });
