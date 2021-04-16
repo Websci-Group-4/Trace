@@ -74,14 +74,14 @@ Visualization 2: View entire breakdown of users by organizations as well https:/
 Worklog:
 - T
 Part 1: Creating Your Datasets
-- T
+- I wrote a data randomizer script called seed.js. `npm run seed` will reinitialize the database with random data
 Part 2: Creating Your Visualizations
-- T
+- I used d3 (nodejs side) to generate SVGs and send them back to the client. The data is obviously also parsed on the back end
 Part 3: Displaying Your Visualizations
-- T
+- I simply had to add another element to the page with the resulting pre-rendered visualizations
 
 Creativity:
-- T
+- I think the charts I chose are kinda creative, and the data is live-updating so that's cool
 
 Q Russell
 ---------
