@@ -36,16 +36,16 @@ Creativity:
 Deepti Sachi
 ------------
 Visualization 1: Tracking tag usage by user and corresponding uploads by tag.
-Visualization 2: Tracking viewer OR upload frequency over time. (note: whichever is easier to code for)
+Visualization 2: Tracking viewer frequency over time.
 
 Worklog:
-- T
+- I created a separate router function in User.Router and Image.Router to return a randomized .csv file. The link at http://localhost:4200/lab6 will return a .csv file for an arbitrarily selected ID, but other IDs should work as well.
 Part 1: Creating Your Datasets
-- T
+- I used an arbitrarily-chosen user ID to pull information from the database. I used a random Javascript function to simulate viewer counts and tags, since these are not provided by the database.
 Part 2: Creating Your Visualizations
-- T
+- I chose to use R to display visualizations, since D3 was difficult to implement. A simple lollipop graph was suitable for the viewer count, but I had trouble organizing a proper CSV format and therefore visualization for the tag usage. I ultimately settled on a treemap (where tags were the groups, and corresponding image uploads were the subgroups), though there was some difficulty in getting R to display the text at a proper size.
 Part 3: Displaying Your Visualizations
-- T
+- The images and router methods can be used at http://localhost:4200/lab6
 
 Creativity:
 - T
@@ -86,8 +86,8 @@ Creativity:
 
 Kenny Lee
 ---------
-Visualization 1: Tracking user activity based on geography via world map gradient scheme
-Visualization 2: Users over time via line graph
+Visualization 1: Showing number of users in each organisation
+Visualization 2: Number of views on each image, bar chart
 
 Worklog:
 - T
