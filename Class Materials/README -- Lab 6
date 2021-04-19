@@ -52,7 +52,20 @@ Creativity:
 Deepti Sachi
 ------------
 Visualization 1: Tracking tag usage by user and corresponding uploads by tag.
+Rstudio code (where tags.data is the imported .csv table):
+  group <- c( rep("sketch", length(subset(tags.data, sketch==1, select=c(id)))), rep("original", length(subset(tags.data, original==1, select=c(id)))),   rep("patreon-only", length(subset(tags.data, `patreon-only`==1, select=c(id)))) )
+  subgroupimgs <- c(subset(tags.data, sketch==1, select=c(id)), subset(tags.data, original==1, select=c(id)), subset(tags.data, `patreon-only`==1, select=c(id)))
+  subgroup <- paste("img" , subgroupimgs, sep="-")
+  value <- c(3, 3, 3, 3, 3) [arbitrary values]
+  imageframe.data <- data.frame(group,subgroup,value)
+  p2 <- treemap(imageframe.data, index=c("group","subgroup"), vSize="value", type="index", title="Tag Usage", fontsize.labels=c(9, 15), align.labels=list(c("right", "bottom"),c("center", "center")))
+
 Visualization 2: Tracking viewer frequency over time.
+Rstudio code (where views.data is the imported .csv table):
+  library(tidyverse)
+  library(ggplot2)
+  p1 <- ggplot(views.data, aes(x=Date, y=Viewers)) + geom_point( size=6, color="black", fill=alpha("red", 0.3), alpha=1, shape=21, stroke=2) +  geom_segment( aes(x=Date, xend=Date, y=0, yend=Viewers-0.25)) + geom_text( label= pull(views.data, Viewers),check_overlap = T ) + scale_x_date(date_breaks = "days" , date_labels = "%b-%d") + scale_y_continuous(breaks=seq(0,10,1))
+
 
 Worklog:
 - I created a separate router function in User.Router and Image.Router to return a randomized .csv file. The link at http://localhost:4200/lab6 will return a .csv file for an arbitrarily selected ID, but other IDs should work as well.
