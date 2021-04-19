@@ -98,24 +98,24 @@ Creativity:
 
 Q Russell
 ---------
-Visualization 1:
-Visualization 2:
+Visualization 1: My first visualization is a histogram showing images uploaded compared to organization number and the red line shows how the distribution is somewhat normal.
+Visualization 2: My second data visualization shows the amount of people that viewed by day.
 
 Worklog:
 - T
 Part 1: Creating Your Datasets
-- T
+- I created my datasets using aggregations to pull data from MongoDB
 Part 2: Creating Your Visualizations
-- T
+- Using R and the gg plot I was able to convert my csv files into nicely organized graphs
 Part 3: Displaying Your Visualizations
-- T
+- I used Rstudio to statically display my data
 
 Creativity:
-- T
+- I attempted to create a graph to show difference in views by time but couldn't solve the error given in R
 
 Kenny Lee
 ---------
-Visualization 1: Showing number of users in each organisation
+Visualization 1: Showing number of users in each organization
 Visualization 2: Number of views on each image, bar chart
 
 Worklog:
@@ -128,7 +128,7 @@ Part 2: Creating Your Visualizations
 - My second visualization is of number of views on each image in our database. I predicted that the smaller the number of the image, which implies that it was made earlier, would get more traffic compare to other images.
 Part 3: Displaying Your Visualizations
 - I put it up on lab6 components along with the csv download.
-- For my second visualization, my predictions were accurate with a few anomalies. A trend line was drawn to show a negative correlation between image number and number of views. 
+- For my second visualization, my predictions were accurate with a few anomalies. A trend line was drawn to show a negative correlation between image number and number of views.
 
 Creativity:
 - T
