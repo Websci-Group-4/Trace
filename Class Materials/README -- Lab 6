@@ -128,7 +128,38 @@ Part 2: Creating Your Visualizations
 - My second visualization is of number of views on each image in our database. I predicted that the smaller the number of the image, which implies that it was made earlier, would get more traffic compare to other images.
 Part 3: Displaying Your Visualizations
 - I put it up on lab6 components along with the csv download.
-- For my second visualization, my predictions were accurate with a few anomalies. A trend line was drawn to show a negative correlation between image number and number of views. 
+- For my second visualization, my predictions were accurate with a few anomalies. A trend line was drawn to show a negative correlation between image number and number of views.
+
+Code for RStudio:
+Visualisation 1:
+# Create the data for the chart
+data <- table(
+  id = orgPeople$_id,
+  numOfPeople = orgPeople$numOfPeople
+)
+
+# Give the chart file a name
+png(file = "DataVis_1kenny.png")
+
+# Plot the bar chart
+barplot(data,xlab="Organisations",ylab="Number of People",col="blue",
+main="Number of People in each organisation",border="red")
+
+# Save the file
+dev.off()
+
+Visualisation 2:
+# Create the data for the chart
+x <- numImage$_id
+y <- numImage$images1
+
+# Plot the scatter plot
+plot(x, y, main = "Main title",
+     xlab = "X axis title", ylab = "Y axis title",
+     pch = 19, frame = FALSE)
+
+# Add loess fit
+lines(lowess(x, y), col = "blue")
 
 Creativity:
 - T
