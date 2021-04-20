@@ -1,5 +1,4 @@
 
-<<<<<<< Updated upstream
 /*#account-form {
   display: -ms-flexbox;
   display: -webkit-box;
@@ -65,7 +64,7 @@
 
 /* Hide the images by default */
 .mySlides {
-  display: none;
+  /*display: none;*/
   width: 50%;
   height: 50%;
   margin-left: auto;
@@ -145,4 +144,3 @@
 .demo:hover {
   opacity: 1;
 }
-/*>>>>>>> Stashed changes*/

@@ -34,8 +34,8 @@ permissionRouter.get('/:id', (req, res) => {
     else {
       console.log("[API] Success! Permission found in our database.");
       console.log("[API] JSON-formatted version of the Permission sent back.");
-      console.log(document);
-      res.json(document);
+      console.log(doc);
+      res.json(doc);
     }
   });
 });

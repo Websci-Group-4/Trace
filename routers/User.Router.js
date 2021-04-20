@@ -7,6 +7,7 @@ const csvConverter = require('json-2-csv');
 const userRouter = express.Router();
 const User = require('../models/User.Model');
 const Permission = require('../models/Permission.Model');
+const Image = require('../models/Image.Model');
 // Null 'Organization' indicates a native Trace user.
 // Permission wall for any image access.
 
@@ -14,9 +15,45 @@ const Permission = require('../models/Permission.Model');
 
 // ROUTES
 
-userRouter.get('/get/:id', (req, res) => {
-  // Do stuff.
-  res.send("/users/:id");
+// test ID: 60796c3ac2ddb8b404621010
+// test permission: 60796c3dc2ddb8b404621083
+userRouter.get('/get/images/:id', (req, res) => {
+  console.log(`\n[API] GET REQUEST at ${req.originalUrl}`);
+
+  if(!req.params.id) {
+    console.log("[API] Error! 'id' not specified in the link.");
+    res.status(400).send("Bad Request: Movie title not provided in the link.");
+    return;
+  }
+  User.findOne({ "_id": `${req.params.id.toString()}` },
+  function(err, result) {
+    if (err) {
+      res.send(err);
+    } else {
+      // console.log('User get');
+      console.log(result);
+      // for(var i = 0; i< result.permissions.length; i++){
+      //     let requestOptions = {
+      //       "method": "GET",
+      //       "url": "http://localhost:3000/image/permission/" + result.permissions[i]
+      //     };
+      //     await request(requestOptions, function(error, response) {
+      //       if(response.statusCode == 200) {
+      //         // On success, just return the raw data.
+      //         let responseJSON = JSON.parse(response.body);
+      //         res.write(responseJSON.toString());
+      //         // console.log(responseJSON);
+      //       } else {
+      //         console.log(`[API] Failed! Response from ${requestOptions.url} sent back.`);
+      //         console.log(response.body);
+      //         res.status(500).send("Internal Server Error: The API call we made failed.");
+      //       }
+      //     });
+      // }
+      res.send(result);
+    }
+  });
+
 });
 
 userRouter.post('/create', (req, res) => {
@@ -33,6 +70,8 @@ userRouter.delete('/delete/:id', (req, res) => {
   // Do stuff.
   res.send("/users/delete/:id");
 });
+
+
 
 // ======================================================================
 // LAB 6 ROUTES

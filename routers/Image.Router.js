@@ -13,11 +13,34 @@ const Image = require('../models/Image.Model');
 // ROUTES
 // ======================================================================
 
-imageRouter.get('/:id', (req, res) => {
-  // Do stuff.
-  res.send("/image/:id");
+// Get image by permission.
+imageRouter.get('/permission/:perm', (req, res) => {
+  Image.findOne( { "permissions": {$all : [`${req.params.perm.toString()}`]} },
+    function(err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        console.log(result);
+        res.send(result);
+      }
+  }); 
 
-  // Note: Modifies views!
+});
+
+// test user: 60796c3ac2ddb8b404621010
+// test permission: 60796c3dc2ddb8b404621083
+// test img: 60796c3dc2ddb8b40462104f
+// Get image by ID.
+imageRouter.get('/:id', (req, res) => {
+  Image.findOne( { "_id": `${req.params.id.toString()}` },
+    function(err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        console.log(result);
+        res.send(result);
+      }
+  }); 
 });
 
 imageRouter.post('/create', (req, res) => {
