@@ -59,7 +59,7 @@ GET | /:id | Returns the specified image from our database. | No
 POST | /create | Creates a new image from provided information and stores it in our database. | No
 POST | /update/:id | Updates the properties of the specified image in our database with provided information. | No
 DELETE | /delete/:id | Deletes the specified image from our database. | No
-POST | /against/:id | Checks provided image data for our watermarking and returns the payload if found. | No
+POST | /against | Checks provided image data for our watermarking and returns the payload if found. | Yes
 
 ### [GET] - '/image/:id'
 
@@ -125,20 +125,35 @@ This endpoint deletes the specified image from our database.
 
 ```
 
-### [POST] - '/image/against/:id'
+### [POST] - '/image/against'
 
-This endpoint checks provided image data for our watermarking and returns the payload if found.
+This endpoint checks provided image data for our watermarking and returns the payload if found.  
+NOTICE: Critically assumes that the provided image was steganographically embedded with our encode.py program and that the Base64 is properly padded.
 
 #### Sample Request:
 
-```javascript
-
+```json
+// For brevity, we will not include a full Base64 image in the documentation.
+{
+  "image": "data:image/png;base64,YOUR_BASE64_IMAGE_HERE"
+}
 ```
 
-#### Sample Output:
+#### Sample Output on Success:
 
 ```json
+{
+  "payload": "You have found the hidden message!  A winner is you!"
+}
+```
 
+#### Sample Output on Error:
+
+```json
+{
+  "status": 400,
+  "message": "Malformed input: Either the provided Base64 wasn't padded properly or the image wasn't fingerprinted by us."
+}
 ```
 
 ---
