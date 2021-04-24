@@ -38,7 +38,7 @@
       {
         "name": "Images",
         "path": "./routers/Image.Router",
-        "route": "/image"
+        "route": "/images"
       },
       {
         "name": "Views",

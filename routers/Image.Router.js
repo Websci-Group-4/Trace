@@ -3,6 +3,11 @@
 const express = require('express');
 const request = require('request');
 
+let { PythonShell } = require('python-shell');
+var pyOptions = {
+  "scriptPath": __dirname + "/../python"
+}
+
 const imageRouter = express.Router();
 const Image = require('../models/Image.Model');
 // Field 'views' inform the steganography layer.
@@ -58,10 +63,29 @@ imageRouter.delete('/delete/:id', (req, res) => {
   res.send("/image/delete/:id");
 });
 
-// Input: imgFile
-imageRouter.post('/against/:id', (req, res) => {
-  // Do stuff.
-  res.send("/image/against/:id");
+// Returns the message steganographically embedded -- whatever it may be.
+// Input: Base64 of the image to check.
+imageRouter.post('/against', (req, res) => {
+  // Create the Python Shell that will run this function.
+  var pyShell = new PythonShell('decode.py', pyOptions);
+
+  // Report the decoded result when done.
+  pyShell.on('message', (result) => {
+    res.send(result.toString());
+  });
+
+  // Show errors on the server logs.
+  pyShell.on('stderr', (result) => {
+    console.log(result.toString());
+  });
+
+  // Close the shell when done.
+  pyShell.on('close', (err) => {
+    pyShell.end();
+  });
+
+  // Send the data to the program.
+  pyShell.send(req.body.image);
 });
 
 //LAB 6 VISUALIZATION ROUTES
