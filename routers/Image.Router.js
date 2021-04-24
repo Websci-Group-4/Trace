@@ -3,7 +3,7 @@
 const express = require('express');
 const request = require('request');
 
-let { PythonShell } = require('python-shell');
+var { PythonShell } = require('python-shell');
 var pyOptions = {
   "scriptPath": __dirname + "/../python"
 }
@@ -71,12 +71,19 @@ imageRouter.post('/against', (req, res) => {
 
   // Report the decoded result when done.
   pyShell.on('message', (result) => {
-    res.send(result.toString());
+    res.json({
+      payload: result.toString()
+    });
   });
 
   // Show errors on the server logs.
   pyShell.on('stderr', (result) => {
     console.log(result.toString());
+    res.json({
+      status: 400,
+      message: "Malformed input: \
+      Either the provided Base64 wasn't padded properly or the image wasn't fingerprinted by us."
+    });
   });
 
   // Close the shell when done.
