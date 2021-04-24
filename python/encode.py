@@ -93,7 +93,7 @@ def ImageToB64(image):
 #==============================================================================
 # Main Body
 #==============================================================================
-if __name__ == "__main__":
+if __name__ == "__main__":   
     # Get inputs.
     b64_carrier = sys.stdin.readline()
     message = sys.stdin.readline()
