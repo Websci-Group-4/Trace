@@ -9,7 +9,6 @@ const Permission = require("../models/Permission.Model");
 
 const d3 = require("d3");
 const jsdom = require("jsdom");
-// "Has to be created through payment." -- Ask Ethan.
 
 // NOTE: JWT Auth required, attaches requesting user for EOU. -- Ask Ethan.
 
@@ -202,28 +201,6 @@ viewRouter.get("/visualization", (req, res) => {
       });
     });
   });
-});
-
-viewRouter.get("/:id", (req, res) => {
-  // Do stuff.
-  res.send("/organizations/:id");
-});
-
-// Input: Organization, Pay_Info
-viewRouter.post("/create", (req, res) => {
-  // Do stuff.
-  res.send("/organizations/create");
-});
-
-// Input: Updates
-viewRouter.post("/update/:id", (req, res) => {
-  // Do stuff.
-  res.send("/organizations/update/:id");
-});
-
-viewRouter.delete("/delete/:id", (req, res) => {
-  // Do stuff.
-  res.send("/organizations/delete/:id");
 });
 
 // Export the routes.
