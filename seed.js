@@ -238,6 +238,8 @@ const seed = async (models) => {
                 url: "https://picsum.photos/512/512",
                 permissions: [],
                 views: [],
+                title: "Image #" + i,
+                description: "All about image #" + i,
               })
             );
           });
