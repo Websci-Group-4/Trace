@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
+    <?php?>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Trace</a>
+        <a class="navbar-brand" href="../homepage/homepage.component.html">Trace</a>
         <!-- For mobile users. -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -21,8 +22,7 @@
         <!-- The navigation bar in general. -->
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-<!--             <li class="nav-item"><a class="nav-link" href="/steganography">What is Steganography?</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="../about/about.component.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="https://github.com/Websci-Group-4/Trace">Github</a></li>
           </ul>
           <!-- NOTE: Should only be shown when not logged in! -->

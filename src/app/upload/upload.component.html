@@ -11,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-
-
+    <?php include '../header/header.php';?>
     <div class="container-md" id="upload-body">
 
       <div class="row border">
@@ -65,14 +64,14 @@
                 </div>
 
               </div>
-             
+
             </div>
         </div>
 
         <div class="col-sm-3 upload-col" id="upload-options">
           <span>
             <h3><b>Upload</b></h3>
-          </span>      
+          </span>
           <span class="h4">
           <div class="form-check form-check-inline m-3">
             <input class="form-check-input" type="radio" name="pubpriv" value="option1" id="upload-private">
@@ -85,20 +84,19 @@
             <label class="form-check-label" for="upload-public">
               Public
             </label>
-          </div>          
-          <div class="form-check m-3">            
+          </div>
+          <div class="form-check m-3">
             <input class="form-check-input" type="checkbox" value="" id="upload-public">
             <label class="form-check-label" for="flexCheckDefault">
               Enable Stenography
-            </label>          
-          </div>            
-          <button type="button" class="btn m-3" onclick="location.href='/profile'">Publish</button>     
+            </label>
+          </div>
+          <button type="button" class="btn m-3" onclick="location.href='/profile'">Publish</button>
           <!-- <br><textarea readonly placeholder="link appears here"></textarea> -->
-          </span>               
+          </span>
       	</div>
    	  </div>
     </div>
-
-
+    <?php include '../footer/footer.php';?>
   </body>
 </html>
