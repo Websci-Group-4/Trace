@@ -48,22 +48,31 @@ authRouter.post('/register', (req, res) => {
 
 // Written by: Quadir Russell.
 authRouter.post('/login', (req, res) => {
-  var email = req.body.email
-  var password = req.body.password
+  var email = req.body.email;
+  var password = req.body.password;
 
-  User.findOne({ email: email }, (err, user) => {
+  User.findOne({ email: email }, (userErr, user) => {
     // Case: There was an error.
-    if(err || !user) {
+    if(userErr || !user) {
       res.json({
         message: 'Email or password is incorrect.'
       });
     }
     // Case: User is found.
     else {
-      let token = jwt.sign({ name: user.name }, 'verySecretValue', { expiresIn: '1h' });
-      res.json({
-        message: "Login Successful!",
-        token: token
+      // Check if the password matches.
+      bcrypt.compare(password, user.password, (passErr, result) => {
+        if(result) {
+          let token = jwt.sign({ name: user.name }, 'verySecretValue', { expiresIn: '1h' });
+          res.json({
+            message: "Login Successful!",
+            token: token
+          });
+        } else {
+          res.json({
+            message: 'Email or password is incorrect.'
+          });
+        }
       });
     }
   });
