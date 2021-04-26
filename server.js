@@ -98,8 +98,6 @@ db.once('open', function() {
     console.log("\nServer up on *:" + PORT.toString());
   });
 
-
-
   // Set up functionality to close the client connection when the server is stopped.
   nodeCleanup(function() {
     console.log("\nRunning shutdown process...");
