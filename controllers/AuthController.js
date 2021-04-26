@@ -33,14 +33,40 @@ const register = (req, res, next) => {
       })
     })
 }
-/*
+
 const login = (req, res, next) => {
-    var username = req.body.username
+    var username = req.body.email
     var password = req.body.password
 
-    User.findOne({$or: [{email:username},{phone}]})
+    User.findOne({$or: [{email:username},{email:username}]})
+    .then(user => {
+      if(user){
+        bcrypt.compare(password, user.password, function (err, result){
+          if(err){
+            res.json({
+              error: err
+            })
+          }
+          if(result){
+            let token = jwt.sign({name: user.name}, 'verySecretValue',{expiresIn: '1h'})
+            res.json({
+              message: "Login Successful!",
+              token
+            })
+          }else{
+            res.json({
+              message: 'Username or Password is incorrect'
+            })
+          }
+        })
+      }else{
+        res.json({
+          message: 'Username or Password is incorrect'
+        })
+      }
+    })
 }
-*/
+
 module.exports= {
-  register
+  register,login
 }

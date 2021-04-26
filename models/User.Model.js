@@ -29,7 +29,7 @@ const User = new Schema({
       ref: "Permission",
     },
   ],
-});
+},{timestamps:true});
 //const User = mongoose.model("User", User);
 
 module.exports = mongoose.model("User", User);

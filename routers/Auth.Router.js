@@ -14,13 +14,11 @@ const authController = require('../controllers/AuthController')
 // ======================================================================
 
 // Input: Credentials
-authRouter.post('/login', (req, res) => {
-  // Do stuff.
-  res.send("/auth/login");
-});
+
 
 // Input: Credentials
 authRouter.post('/register', authController.register)
+authRouter.post('/login', authController.login)
 
 
 // Export the routes.
