@@ -123,6 +123,3 @@ db.on('error', function() {
   console.log(`Mongoose connection to database '${DBNAME}' FAILED.`);
   throw new Error(`Unable to connect to MongoDB database '${DBNAME}'.`);
 });
-
-//For Login Auth
-app.use('/api', AuthRoute)
