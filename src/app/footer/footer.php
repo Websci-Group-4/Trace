@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
+    <?php?>
 <!-- Footer -->
 <footer class="bg-light text-center text-lg-start">
   <!-- Grid container -->
@@ -28,7 +30,7 @@
 
       <!--Grid column-->
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5>Links</h5>
+        <h5 class="text-uppercase">Links</h5>
 
         <ul class="list-unstyled mb-0">
           <li>

@@ -5,11 +5,11 @@ const app = express();
 const http = require('http').Server(app);
 const fs = require('fs');
 const cors = require('cors');
+const nodeCleanup = require('node-cleanup');
+const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 
-const nodeCleanup = require('node-cleanup');
-const AuthRoute = require('./routers/Auth.Router')
 // ======================================================================
 // GET SEVER CONFIGURATION
 // ======================================================================
@@ -44,8 +44,11 @@ console.log("Serving static directories SUCCESS.");
 
 const ROUTERS = config.server.routers;
 
-app.use(cors()); // Open CORS policy.
-app.use(express.json()); // Ensures correct JSON input.
+// Set up Open CORS Policy and JSON Body Parsing.
+app.use(cors());
+app.use(bodyParser.json({
+  limit: '10mb'
+}));
 
 // Set up our landing page route.
 app.get('/', function(req, res) {
