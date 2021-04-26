@@ -9,7 +9,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const nodeCleanup = require('node-cleanup');
-
+const AuthRoute = require('./routers/Auth.Router')
 // ======================================================================
 // GET SEVER CONFIGURATION
 // ======================================================================
@@ -95,6 +95,8 @@ db.once('open', function() {
     console.log("\nServer up on *:" + PORT.toString());
   });
 
+
+
   // Set up functionality to close the client connection when the server is stopped.
   nodeCleanup(function() {
     console.log("\nRunning shutdown process...");
@@ -109,7 +111,7 @@ db.once('open', function() {
       console.log("Server closed.");
     });
     nodeCleanup.uninstall(); // Cleanup function need only be run once.
-    return false; // Allows time to perform asynchronous cleanup. 
+    return false; // Allows time to perform asynchronous cleanup.
   });
 });
 
@@ -118,3 +120,6 @@ db.on('error', function() {
   console.log(`Mongoose connection to database '${DBNAME}' FAILED.`);
   throw new Error(`Unable to connect to MongoDB database '${DBNAME}'.`);
 });
+
+//For Login Auth
+app.use('/api', AuthRoute)

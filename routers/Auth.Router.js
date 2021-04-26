@@ -3,7 +3,11 @@
 const express = require('express');
 const request = require('request');
 
+
 const authRouter = express.Router();
+
+const authController = require('../controllers/AuthController')
+
 
 // ======================================================================
 // ROUTES
@@ -16,10 +20,7 @@ authRouter.post('/login', (req, res) => {
 });
 
 // Input: Credentials
-authRouter.post('/signup', (req, res) => {
-  // Do stuff.
-  res.send("/auth/signup");
-});
+authRouter.post('/register', authController.register)
 
 
 // Export the routes.
