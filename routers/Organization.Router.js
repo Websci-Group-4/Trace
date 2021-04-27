@@ -144,8 +144,21 @@ orgRouter.get("/visualization", (req, res) => {
 });
 
 orgRouter.get("/:id", (req, res) => {
-  // Do stuff.
-  res.send("/organizations/:id");
+  console.log(`\n[API] GET REQUEST at ${req.originalUrl}`);
+  console.log(req.params.id.toString());
+  if (!req.params.id) {
+    console.log("[API] Error! 'id' not specified in the link.");
+    res.status(400).send("Bad Request: Movie title not provided in the link.");
+    return;
+  }
+  Organization.findOne({ _id: `${req.params.id.toString()}` }, function (err, result) {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log(result);
+      res.send(result);
+    }
+  });
 });
 
 // Input: Organization, Pay_Info

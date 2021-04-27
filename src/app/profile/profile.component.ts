@@ -18,8 +18,37 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
   	// TODO: get user ID from login
-  	this.getImages('60796c3ac2ddb8b404621010');
+    this.getBio('608748dcd99c9572e03f2c73');
+  	this.getImages('608748dcd99c9572e03f2c73');
   }
+
+  public getBio(ID:string){
+    var endpointUser = "http://localhost:3000/users/get/images/" + ID;
+    var imagePromises : Promise<Object>[] = [];
+    this.httpClient.get(endpointUser.toString()).subscribe(
+        (val) => {
+          let userinfo = JSON.parse(JSON.stringify(val));
+          let myName = document.getElementById('username') as HTMLInputElement;
+          let myOrg = document.getElementById('organization') as HTMLInputElement;
+          var endpointOrg = "http://localhost:3000/organizations/" + userinfo.organization;
+          this.httpClient.get(endpointOrg.toString()).subscribe(
+            (val) => {
+              let orginfo = JSON.parse(JSON.stringify(val));
+              myName.innerText = userinfo.firstName + " " +  userinfo.lastName;
+              myOrg.innerText = orginfo.name;
+            },
+            (err) => {
+                console.log("GET call in error", err);
+            },
+            () => {});
+        },
+        (err) => {
+            console.log("GET call in error", err);
+        },
+        () => { });
+    
+  }
+
 
 	public getImages(ID:string){
 		var endpointUser = "http://localhost:3000/users/get/images/" + ID;
@@ -50,6 +79,17 @@ export class ProfileComponent implements OnInit {
               profileImages += 'TODO';
               profileImages += '</span></div></div></a></div>';
               if(i+1 % 3 == 0){ profileImages += '</div>'; }
+
+              // if(i % 3 == 0){ profileImages += '<div class="row">'; }
+              // profileImages += '<div class="col-sm-4">';
+              // profileImages += '<a href = "' + imglink.toString() + '">';
+              // profileImages += '<div class="image"><img class="img img-thumbnail full-width" src="';
+              // profileImages += imageJSON.url;
+              // profileImages += '">'
+              // profileImages += '<div class="gallery-title"><span class="text-break gallery-title-text">';
+              // profileImages += 'TODO';
+              // profileImages += '</span></div></div></a></div>';
+              // if(i+1 % 3 == 0){ profileImages += '</div>'; }
             }           
             if(imagePromises.length % 3 != 0){ profileImages += '</div>'; }
             let myContainer = document.getElementById('profile-gallery') as HTMLInputElement;
