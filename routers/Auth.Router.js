@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../models/User.Model');
 const authRouter = express.Router();
-
+const authenticate = require('../middleware/authenticate')
 // ======================================================================
 // ROUTES
 // ======================================================================
@@ -35,7 +35,7 @@ authRouter.post('/register', (req, res) => {
     user.save((saveErr) => {
       if(saveErr) {
         res.json({
-          message: error.toString()
+          message: saveErr.toString()
         });
       } else {
         res.json({
@@ -63,7 +63,7 @@ authRouter.post('/login', (req, res) => {
       // Check if the password matches.
       bcrypt.compare(password, user.password, (passErr, result) => {
         if(result) {
-          let token = jwt.sign({ name: user.name }, 'verySecretValue', { expiresIn: '1h' });
+          let token = jwt.sign({ name: user.name }, ')Cactusman1220(', { expiresIn: '1h' });
           res.json({
             message: "Login Successful!",
             token: token
