@@ -2,9 +2,9 @@
 <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center mt-5">
   <div class="card py-3 px-3 w-50">
     <div class="border rounded">
-      <img class="img img-thumbnail" src="assets/images/gal1.jpg">
-      <div class="card-header text-center">Title of Image</div>
-      <div class="card-text text-center">Description of Image</div>
+      <img class="img img-thumbnail" [src]="data.imageData.url">
+      <div class="card-header text-center">{{ data.imageData.title }}</div>
+      <div class="card-text text-center">{{ data.imageData.description }}</div>
     </div>
   </div>
 </div>

@@ -25,13 +25,15 @@ imageRouter.post("/get/:id", (req, res) => {
   var newView = new View({
     user: req.body.user.toString(),
     image: req.params.id.toString(),
-    time: new Date().toString()
+    time: new Date()
   });
 
   Image.findOne({ _id: req.params.id.toString() }, function (err, imgResult) {
     if (err) {
       res.send(err);
     } else {
+      newView.save();
+
       // Create the Python Shell that will run this function.
       var pyShell = new PythonShell("encode.py", pyOptions);
 
@@ -60,7 +62,7 @@ imageRouter.post("/get/:id", (req, res) => {
 
       // Send the data to the program.
       pyShell.send(imgResult.url);
-      pyShell.send(newView.user + " :: " + imgResult.title + " :: " + newView.time);
+      pyShell.send(req.body.identifier + " :: " + imgResult.title + " :: " + newView.time.toString());
     }
   });
 });

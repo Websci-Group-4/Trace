@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
     if(values.password_one != values.password_two) {
       return;
     }
-    // Assemble the request body.
+    // Assemble the request body. -- DEBUG: USES TEST VALUES FOR DEMOING
     const BODY: any = {
       "email": values.email,
       "firstName": "Deepti",
