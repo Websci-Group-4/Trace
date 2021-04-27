@@ -1,19 +1,19 @@
 
 <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
   <div class="card py-3 px-3 w-25">
-    <form id="signin">
+    <form id="signin" [formGroup]="signinForm" (ngSubmit)="signUser()">
       <div class="mb-4">
         <h1 class="h3 my-3 font-weight-normal text-center">Welcome back to Trace!</h1>
       </div>
 
       <div class="form-label-group">
         <label for="inputEmail">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus="">
+        <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email address" required autofocus="">
       </div>
 
       <div class="form-label-group">
         <label for="inputPassword">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" class="form-control" formControlName="password" placeholder="Password" required>
       </div>
 
       <div class="checkbox">
@@ -21,6 +21,8 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
+
+      <p class="text-info" *ngIf="data.signinData.message">{{ data.signinData.message }}</p>
 
       <button class="btn btn-lg btn-primary btn-block my-3" type="submit">Sign In</button>
     </form>

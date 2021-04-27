@@ -1,25 +1,27 @@
 
 <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
   <div class="card py-3 px-3 w-25">
-    <form id="account-form">
+    <form id="account-form" [formGroup]="signupForm" (ngSubmit)="registerUser()">
       <div class="mb-4">
         <h1 class="h3 my-3 font-weight-normal text-center">Sign up for Trace!</h1>
       </div>
 
       <div class="form-label-group">
         <label for="inputEmail">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+        <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email address" required>
       </div>
 
       <div class="form-label-group">
         <label for="inputPassword">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" class="form-control" formControlName="password_one"  placeholder="Password" required>
       </div>
 
       <div class="form-label-group">
         <label for="inputPasswordCheck">Retype Password</label>
-        <input type="password" id="inputPasswordCheck" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPasswordCheck" class="form-control" formControlName="password_two" placeholder="Password" required>
       </div>
+
+      <p class="text-info" *ngIf="data.signupData.message">{{ data.signupData.message }}</p>
 
       <button class="btn btn-lg btn-primary btn-block my-3" type="submit">Sign Up</button>
     </form>

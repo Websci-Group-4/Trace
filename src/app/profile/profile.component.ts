@@ -17,42 +17,48 @@ export class ProfileComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-  	// TODO:
-    // 1: get user email from localStorage token
-    // 2: use User.Router GET to retrieve user information from user email
-    //    (may have to write new one)
-    // 3: insert retrieved user ID into below functions
-    // e.g. var endpointUser = "http://localhost:3000/users/get/byemail/" + token.email;
-    //      this.httpClient.get(endpointUser.toString()).subscribe( ...
-    this.getBio('608748dcd99c9572e03f2c73');
-  	this.getImages('608748dcd99c9572e03f2c73');
+    // Properly gets the user's email assuming there was a sign-in performed.
+    var userEmail = localStorage.getItem("email");
+
+    // Retrieve the user's ID and use it to fill in the rest of the page's information.
+    const ENDPOINT = "http://localhost:3000/users/get/" + userEmail;
+    this.httpClient.get(ENDPOINT, { responseType: 'json' })
+    .subscribe((res: any) => {
+      var userID = res._id;
+
+      localStorage.setItem("userID", userID); // Save for use with other page's operations.
+      console.log(userID) // DEBUG
+
+      this.getBio(userID);
+      this.getImages(userID);
+    });
   }
 
-  public getBio(ID:string){
+  public getBio(ID:string) {
     var endpointUser = "http://localhost:3000/users/get/images/" + ID;
     var imagePromises : Promise<Object>[] = [];
-    this.httpClient.get(endpointUser.toString()).subscribe(
-        (val) => {
-          let userinfo = JSON.parse(JSON.stringify(val));
-          let myName = document.getElementById('username') as HTMLInputElement;
-          let myOrg = document.getElementById('organization') as HTMLInputElement;
-          var endpointOrg = "http://localhost:3000/organizations/" + userinfo.organization;
-          this.httpClient.get(endpointOrg.toString()).subscribe(
-            (val) => {
-              let orginfo = JSON.parse(JSON.stringify(val));
-              myName.innerText = userinfo.firstName + " " +  userinfo.lastName;
-              myOrg.innerText = orginfo.name;
-            },
-            (err) => {
-                console.log("GET call in error", err);
-            },
-            () => {});
-        },
-        (err) => {
-            console.log("GET call in error", err);
-        },
-        () => { });
-    
+    this.httpClient.get(endpointUser.toString())
+    .subscribe((val) => {
+      let userinfo = JSON.parse(JSON.stringify(val));
+      let myName = document.getElementById('username') as HTMLInputElement;
+      let myOrg = document.getElementById('organization') as HTMLInputElement;
+      var endpointOrg = "http://localhost:3000/organizations/" + userinfo.organization;
+
+      this.httpClient.get(endpointOrg.toString())
+      .subscribe((val) => {
+        let orginfo = JSON.parse(JSON.stringify(val));
+        myName.innerText = userinfo.firstName + " " +  userinfo.lastName;
+        myOrg.innerText = orginfo.name;
+      },
+      (err) => {
+        console.log("GET call in error", err);
+      },
+      () => {});
+      },
+    (err) => {
+      console.log("GET call in error", err);
+    },
+    () => { }); 
   }
 
 
