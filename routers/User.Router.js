@@ -12,13 +12,12 @@ const Image = require("../models/Image.Model");
 
 // NOTE: JWT Auth required, attaches requesting user for EOU. -- Ask Ethan.
 
+// ======================================================================
 // ROUTES
+// ======================================================================
 
-// test ID: 60796c3ac2ddb8b404621010
-// test permission: 60796c3dc2ddb8b404621083
 userRouter.get("/get/images/:id", (req, res) => {
   console.log(`\n[API] GET REQUEST at ${req.originalUrl}`);
-
   
   if (!req.params.id) {
     console.log("[API] Error! 'id' not specified in the link.");
@@ -53,6 +52,19 @@ userRouter.delete("/delete/:id", (req, res) => {
       res.status(500).send(err);
     } else {
       res.status(200).json(usr);
+    }
+  });
+});
+
+// Made in the last hour, this retrieves a user's information by their email.
+// By: Jacob Dyer
+userRouter.get("/get/:email", (req, res) => {
+  User.findOne({ email: req.params.email.toString() }, function (err, result) {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log(result);
+      res.send(result);
     }
   });
 });

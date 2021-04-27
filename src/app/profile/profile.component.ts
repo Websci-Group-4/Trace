@@ -17,19 +17,18 @@ export class ProfileComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    // Properly gets the user's email assuming there was a sign-in performed.
+    var userEmail = localStorage.getItem("email");
 
-    console.log(localStorage.getItem("email"));
-    console.log(localStorage.getItem("token"));
+    // Retrieve the user's ID and use it to fill in the rest of the page's information.
+    const ENDPOINT = "http://localhost:3000/users/get/" + userEmail;
+    this.httpClient.get(ENDPOINT, { responseType: 'json' })
+    .subscribe((res: any) => {
+      var userID = res._id;
 
-  	// TODO:
-    // 1: get user email from localStorage token
-    // 2: use User.Router GET to retrieve user information from user email
-    //    (may have to write new one)
-    // 3: insert retrieved user ID into below functions
-    // e.g. var endpointUser = "http://localhost:3000/users/get/byemail/" + token.email;
-    //      this.httpClient.get(endpointUser.toString()).subscribe( ...
-    this.getBio('608748dcd99c9572e03f2c73');
-  	this.getImages('608748dcd99c9572e03f2c73');
+      this.getBio(userID);
+      this.getImages(userID);
+    });
   }
 
   public getBio(ID:string) {
