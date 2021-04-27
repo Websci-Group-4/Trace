@@ -26,6 +26,9 @@ export class ProfileComponent implements OnInit {
     .subscribe((res: any) => {
       var userID = res._id;
 
+      localStorage.setItem("userID", userID); // Save for use with other page's operations.
+      console.log(userID) // DEBUG
+
       this.getBio(userID);
       this.getImages(userID);
     });

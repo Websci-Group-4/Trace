@@ -11,6 +11,7 @@ var pyOptions = {
 // Create the router.
 const imageRouter = express.Router();
 const Image = require("../models/Image.Model");
+const View = require("../models/View.Model");
 
 // NOTE: JWT Auth required, attaches requesting user for EOU. -- Ask Ethan.
 
@@ -18,14 +19,48 @@ const Image = require("../models/Image.Model");
 // ROUTES
 // ======================================================================
 
-// Retrieves an image by its ID.
-imageRouter.get("/:id", (req, res) => {
-  Image.findOne({ _id: `${req.params.id.toString()}` }, function (err, result) {
+// Retrieves an image by its ID.  Requires tracking who asked.
+imageRouter.post("/get/:id", (req, res) => {
+  // Make the new View object.
+  var newView = new View({
+    user: req.body.user.toString(),
+    image: req.params.id.toString(),
+    time: new Date().toString()
+  });
+
+  Image.findOne({ _id: req.params.id.toString() }, function (err, imgResult) {
     if (err) {
       res.send(err);
     } else {
-      console.log(result);
-      res.send(result);
+      // Create the Python Shell that will run this function.
+      var pyShell = new PythonShell("encode.py", pyOptions);
+
+      // Report the decoded result when done.
+      pyShell.on("message", (result) => {
+        console.log("Encoding performed!");
+        imgResult.url = result;
+        res.json(imgResult);
+      });
+
+      // Show errors on the server logs.
+      pyShell.on("stderr", (result) => {
+        console.log(result.toString());
+        res.json({
+          status: 400,
+          message:
+            "Malformed input: \
+          The provided Base64 wasn't padded properly.",
+        });
+      });
+
+      // Close the shell when done.
+      pyShell.on("close", (err) => {
+        pyShell.end();
+      });
+
+      // Send the data to the program.
+      pyShell.send(imgResult.url);
+      pyShell.send(newView.user + " :: " + imgResult.title + " :: " + newView.time);
     }
   });
 });
@@ -36,6 +71,8 @@ imageRouter.post("/create", (req, res) => {
   // 1. Convert the provided information into an Image Document.
   var newImage = new Image({
     url: req.body.image_url,
+    title: req.body.title,
+    description: req.body.description
   });
 
   // 2. Verify that the Image is not in the database already.
