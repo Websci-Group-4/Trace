@@ -17,7 +17,13 @@ export class ProfileComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-  	// TODO: get user ID from login
+  	// TODO:
+    // 1: get user email from localStorage token
+    // 2: use User.Router GET to retrieve user information from user email
+    //    (may have to write new one)
+    // 3: insert retrieved user ID into below functions
+    // e.g. var endpointUser = "http://localhost:3000/users/get/byemail/" + token.email;
+    //      this.httpClient.get(endpointUser.toString()).subscribe( ...
     this.getBio('608748dcd99c9572e03f2c73');
   	this.getImages('608748dcd99c9572e03f2c73');
   }
