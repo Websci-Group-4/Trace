@@ -17,6 +17,10 @@ export class ProfileComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+
+    console.log(localStorage.getItem("email"));
+    console.log(localStorage.getItem("token"));
+
   	// TODO:
     // 1: get user email from localStorage token
     // 2: use User.Router GET to retrieve user information from user email
@@ -28,31 +32,31 @@ export class ProfileComponent implements OnInit {
   	this.getImages('608748dcd99c9572e03f2c73');
   }
 
-  public getBio(ID:string){
+  public getBio(ID:string) {
     var endpointUser = "http://localhost:3000/users/get/images/" + ID;
     var imagePromises : Promise<Object>[] = [];
-    this.httpClient.get(endpointUser.toString()).subscribe(
-        (val) => {
-          let userinfo = JSON.parse(JSON.stringify(val));
-          let myName = document.getElementById('username') as HTMLInputElement;
-          let myOrg = document.getElementById('organization') as HTMLInputElement;
-          var endpointOrg = "http://localhost:3000/organizations/" + userinfo.organization;
-          this.httpClient.get(endpointOrg.toString()).subscribe(
-            (val) => {
-              let orginfo = JSON.parse(JSON.stringify(val));
-              myName.innerText = userinfo.firstName + " " +  userinfo.lastName;
-              myOrg.innerText = orginfo.name;
-            },
-            (err) => {
-                console.log("GET call in error", err);
-            },
-            () => {});
-        },
-        (err) => {
-            console.log("GET call in error", err);
-        },
-        () => { });
-    
+    this.httpClient.get(endpointUser.toString())
+    .subscribe((val) => {
+      let userinfo = JSON.parse(JSON.stringify(val));
+      let myName = document.getElementById('username') as HTMLInputElement;
+      let myOrg = document.getElementById('organization') as HTMLInputElement;
+      var endpointOrg = "http://localhost:3000/organizations/" + userinfo.organization;
+
+      this.httpClient.get(endpointOrg.toString())
+      .subscribe((val) => {
+        let orginfo = JSON.parse(JSON.stringify(val));
+        myName.innerText = userinfo.firstName + " " +  userinfo.lastName;
+        myOrg.innerText = orginfo.name;
+      },
+      (err) => {
+        console.log("GET call in error", err);
+      },
+      () => {});
+      },
+    (err) => {
+      console.log("GET call in error", err);
+    },
+    () => { }); 
   }
 
 
