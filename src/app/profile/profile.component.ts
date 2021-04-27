@@ -56,8 +56,6 @@ export class ProfileComponent implements OnInit {
 		this.httpClient.get(endpointUser.toString()).subscribe(
         (val) => {
           let userinfo = JSON.parse(JSON.stringify(val));
-          let myContainer = document.getElementById('displayname') as HTMLInputElement;
-          myContainer.innerText = userinfo.firstName + ' ' + userinfo.lastName;
           var endpointImgs = "http://localhost:3000/users/get/images/";
           for(var i = 0;i< userinfo.permissions.length; i++){
             imagePromises.push(this.getImage(userinfo.permissions[i], i));
@@ -70,14 +68,16 @@ export class ProfileComponent implements OnInit {
               let imglink = new URLBuilder("http://localhost:4200/image");
               imglink.appendQueryParam('imgid', imageJSON._id);
               if(i % 3 == 0){ profileImages += '<div class="row">'; }
-              profileImages += '<div class="col-sm-4">';
+              profileImages += '<div class="card col-4">';
               profileImages += '<a href = "' + imglink.toString() + '">';
-              profileImages += '<div class="image"><img class="img img-thumbnail full-width" src="';
+              profileImages += '<div class="image"><img class="card-img-top img-thumbnail" src="';
               profileImages += imageJSON.url;
+              profileImages += '" alt="'
+              profileImages += imageJSON.title;
               profileImages += '">'
-              profileImages += '<div class="gallery-title"><span class="text-break gallery-title-text">';
-              profileImages += 'TODO';
-              profileImages += '</span></div></div></a></div>';
+              profileImages += '<div class="card-body text-center"><a class="card-title">';
+              profileImages += imageJSON.title;
+              profileImages += '</a></div></div></a></div>';
               if(i+1 % 3 == 0){ profileImages += '</div>'; }
 
               // if(i % 3 == 0){ profileImages += '<div class="row">'; }
@@ -116,7 +116,7 @@ export class ProfileComponent implements OnInit {
     // console.log(profileImages);
 
     private async getImage(perm:string, col:number){
-      var endpointImgs = "http://localhost:3000/image/permission/" + perm;
+      var endpointImgs = "http://localhost:3000/images/permission/" + perm;
       return this.httpClient.get(endpointImgs.toString()).toPromise();
     }
 

@@ -19,6 +19,7 @@ const Image = require("../models/Image.Model");
 userRouter.get("/get/images/:id", (req, res) => {
   console.log(`\n[API] GET REQUEST at ${req.originalUrl}`);
 
+  
   if (!req.params.id) {
     console.log("[API] Error! 'id' not specified in the link.");
     res.status(400).send("Bad Request: Movie title not provided in the link.");
@@ -28,26 +29,7 @@ userRouter.get("/get/images/:id", (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      // console.log('User get');
       console.log(result);
-      // for(var i = 0; i< result.permissions.length; i++){
-      //     let requestOptions = {
-      //       "method": "GET",
-      //       "url": "http://localhost:3000/image/permission/" + result.permissions[i]
-      //     };
-      //     await request(requestOptions, function(error, response) {
-      //       if(response.statusCode == 200) {
-      //         // On success, just return the raw data.
-      //         let responseJSON = JSON.parse(response.body);
-      //         res.write(responseJSON.toString());
-      //         // console.log(responseJSON);
-      //       } else {
-      //         console.log(`[API] Failed! Response from ${requestOptions.url} sent back.`);
-      //         console.log(response.body);
-      //         res.status(500).send("Internal Server Error: The API call we made failed.");
-      //       }
-      //     });
-      // }
       res.send(result);
     }
   });
