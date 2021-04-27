@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 
 export class ImageComponent implements OnInit {
 
-  data: any = { imageData: {} };
+  data: any = { imageData: {}, decodeData: "" };
 
   constructor(private httpClient: HttpClient) { }
 
@@ -39,6 +39,19 @@ export class ImageComponent implements OnInit {
     this.httpClient.post(ENDPOINT, BODY, { responseType: 'json' })
     .subscribe((res: any) => {
       this.data.imageData = res;
+    });
+  }
+
+  public decodeImage() {
+    // Make the request for the image's encoding.
+    const ENDPOINT: string = "http://localhost:3000/images/against";
+    const BODY: any = {
+      "image": this.data.imageData.url
+    };
+    this.httpClient.post(ENDPOINT, BODY, { responseType: 'json' })
+    .subscribe((res: any) => {
+      console.log(res);
+      this.data.decodeData = res.payload;
     });
   }
 }
